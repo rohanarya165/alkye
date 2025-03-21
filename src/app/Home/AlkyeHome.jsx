@@ -25,8 +25,8 @@ export default function AlkyeHome() {
                 <div className="cursor-pointer my-5" onClick={() => setIsShowDetail(false)}>
                     <AlkyeLogoSvg />
                 </div>
-                <p className="text-5xl font-bold">alkye</p>
-                <p>easiest test you will ever do</p>
+                <p className="text-[90px] font-[700]">alkye</p>
+                <p className="text-[24px] font-[400] ">The easiest test you will ever do</p>
             </div>
 
             {isShowDetail && selectedCard ? (
