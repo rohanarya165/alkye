@@ -1,4 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+export default {
+    images: {
+      remotePatterns: [
+        {
+          protocol: "http",
+          hostname: "untitled-twkmuar27a-uc.a.run.app",
+        },
+      ],
+    },
+  };
+  
+  
