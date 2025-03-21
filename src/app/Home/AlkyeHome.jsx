@@ -53,23 +53,32 @@ export default function AlkyeHome() {
                     {allData.map((item) => (
                         <div
                             key={item.id}
-                            className="min-w-[1000px] h-[1000px] p-20 bg-black cursor-pointer m-10 rounded-[71px]"
-                            style={{
-                                backgroundImage: `url(${item.image_url})`,
-                                backgroundPosition: "center",
-                                backgroundSize: "cover",
-                                backgroundRepeat: "no-repeat",
-                            }}
+                            className="relative min-w-[1000px] h-[1000px] p-20 cursor-pointer m-10 rounded-[71px] overflow-hidden transition-all duration-300 group"
                             onClick={() => {
                                 setSelectedCard(item);
                                 setIsShowDetail(true);
                             }}
                         >
-                            <div className="px-6 py-4 mb-12 w-52 text-2xl text-center rounded-full bg-black text-white">
-                                Photography
+                            <div
+                                className="absolute inset-0 transition-all duration-300"
+                                style={{
+                                    backgroundImage: `url(${item.image_url})`,
+                                    backgroundPosition: "center",
+                                    backgroundSize: "cover",
+                                    backgroundRepeat: "no-repeat",
+                                    filter: "brightness(100%)",
+                                }}
+                            />
+                            <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                            <div className="relative z-10">
+                                <div className="px-6 py-4 mb-12 w-52 text-2xl text-center rounded-full bg-black text-white">
+                                    Photography
+                                </div>
+                                <p className="text-white text-2xl">{item.short_description}</p>
                             </div>
-                            <p className="text-white text-2xl">{item.short_description}</p>
                         </div>
+
+
                     ))}
                 </div>
             )}
